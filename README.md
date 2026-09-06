@@ -10,6 +10,7 @@
 
 ## 开始学习
 
+- [Day 02：上下文工程——从 LLM 到代码与项目改进](daily/day-02-context-engineering/README.md)
 - [Day 01：Agent = LLM + Harness](daily/day-01-agent-harness/README.md)
 - [练习与参考要点](daily/day-01-agent-harness/exercises.md)
 - [复盘记录](daily/day-01-agent-harness/retrospective.md)
@@ -27,6 +28,10 @@ daily/
     README.md
     exercises.md
     retrospective.md
+  day-02-context-engineering/
+    README.md
+    exercises.md
+    retrospective.md
 ```
 
 ## 证据约定
@@ -35,7 +40,7 @@ daily/
 
 ## 提交约定
 
-- 新课程：`docs(day-02): add runtime lifecycle lesson`
+- 新课程：`docs(day-02): add context engineering lesson`
 - 概念纠错：`docs(day-01): correct session and memory boundaries`
 - 练习记录：`learn(day-01): record answers and evidence`
 
@@ -44,3 +49,5 @@ daily/
 ## 当前进度
 
 2026-09-06：Day 01 教材已整理。个人练习、项目源码核对和学习验收尚未完成。
+
+2026-09-06：Day 02 已改为上下文工程，提供完整八章教材与源码对照。个人验收与运行实验待完成。
