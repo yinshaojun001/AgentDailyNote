@@ -344,12 +344,12 @@ ConversationCompactor 会先尝试参数截断与旧工具结果修剪，然后�
 
 | 能力 | 观察到的实现 | 定位方法 |
 |---|---|---|
-| Agent 装配 | 接入 system prompt、AutoContextMemory、Toolkit | AgentFactoryService.buildReActAgent |
-| 自动上下文配置 | 从 LLM 配置 extInfo 构建 AutoContextConfig | LLMService.resolveAutoContextMemory |
-| 参数转换 | msgThreshold 可选；maxToken 乘 1024；tokenRatio 缺省 0.4；lastKeep 缺省 10 | AutoContextConfigFactory.buildFromExtInfo |
-| 会话延续 | 创建 Agent 后 loadIfExists，请求结束回调 saveTo | AgentService.prepareRun / onRequestFinally |
-| 长期记忆 | 按配置挂载 MemOS，topK=10，不同 provider 使用不同模式 | attachLongTermMemory |
-| 定制注入 | 一条长期记忆 Hook 路径将召回内容追加到最后的用户消息 | UserMessageLongTermMemoryHook |
+| Agent 装配 | 接入 system prompt、AutoContextMemory、Toolkit | buildReActAgent |
+| 自动上下文配置 | 从 LLM 配置 extInfo 构建 AutoContextConfig | AutoContextMemory |
+| 参数转换 | msgThreshold 可选；maxToken 乘 1024；tokenRatio 缺省 0.4；lastKeep 缺省 10 | buildFromExtInfo |
+| 会话延续 | 创建 Agent 后 loadIfExists，请求结束回调 saveTo | prepareRun / onRequestFinally |
+| 长期记忆 | 按配置挂载 MemOS，topK=10，不同 provider 使用不同模式 | LongTermMemory |
+| 定制注入 | 一条长期记忆 Hook 路径将召回内容追加到最后的用户消息 | LongTermMemoryHook |
 | 知识库 | 根据配置挂载 Knowledge，并设置 RAG mode | buildKnowledge |
 | 消息观测 | 记录 PreReasoning 输入及工具执行前后消息 | AddMessageHook |
 
